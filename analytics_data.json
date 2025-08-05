@@ -1,0 +1,17 @@
+{
+  "page_views": {
+    "home": 7,
+    "resources": 3,
+    "events": 2,
+    "community": 1,
+    "team": 2,
+    "join": 5,
+    "upcoming_events": 1,
+    "past_events": 1
+  },
+  "resource_clicks": {
+    "Practice Interviews": 1
+  },
+  "form_submissions": {},
+  "events": []
+}

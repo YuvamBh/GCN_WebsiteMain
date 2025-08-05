@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+
+{% block title %}Resources - Global Career Network{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding: 2rem 0;">
+    <div class="hero-content">
+        <h1 class="fade-in">Career <span class="gradient-text">Resources</span></h1>
+        <p class="fade-in">
+            Access comprehensive career development tools and resources from ASU Career Services
+        </p>
+    </div>
+</section>
+
+<section class="resources-section" style="padding: 2rem 0;">
+    <div class="resources-container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <div class="resources-intro fade-in" style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="color: var(--asu-maroon); margin-bottom: 1rem;">ASU Career Services Resources</h2>
+            <p style="color: #6b7280; max-width: 600px; margin: 0 auto;">
+                Explore the comprehensive suite of career development tools and resources provided by Arizona State University's Career Services.
+            </p>
+        </div>
+
+        <div class="resources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <!-- Resume Builder -->
+            <div class="resource-card fade-in" style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(140, 29, 64, 0.1); border: 1px solid rgba(140, 29, 64, 0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div class="resource-icon" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, var(--asu-maroon), var(--asu-gold)); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-file-alt" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <h3 style="color: var(--asu-maroon); margin-bottom: 1rem; font-size: 1.25rem;">Resume Builder</h3>
+                <p style="color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6;">
+                    Create professional resumes with ASU's comprehensive resume builder tool. Get templates, tips, and expert guidance.
+                </p>
+                <a href="https://career.asu.edu/resume-cover-letter" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="resource-link"
+                   style="display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; background: var(--asu-maroon); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease;">
+                    Access Resume Builder
+                    <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Interview Preparation -->
+            <div class="resource-card fade-in" style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(140, 29, 64, 0.1); border: 1px solid rgba(140, 29, 64, 0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div class="resource-icon" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, var(--asu-gold), var(--asu-maroon)); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-comments" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <h3 style="color: var(--asu-maroon); margin-bottom: 1rem; font-size: 1.25rem;">Interview Preparation</h3>
+                <p style="color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6;">
+                    Practice common interview questions, get feedback, and learn effective interview strategies with ASU's resources.
+                </p>
+                <a href="https://career.asu.edu/interviewing" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="resource-link"
+                   style="display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; background: var(--asu-maroon); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease;">
+                    Practice Interviews
+                    <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Career Assessment -->
+            <div class="resource-card fade-in" style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(140, 29, 64, 0.1); border: 1px solid rgba(140, 29, 64, 0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div class="resource-icon" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, var(--asu-maroon), var(--asu-gold)); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-search" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <h3 style="color: var(--asu-maroon); margin-bottom: 1rem; font-size: 1.25rem;">Career Assessment</h3>
+                <p style="color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6;">
+                    Discover your career interests, strengths, and potential career paths with ASU's assessment tools.
+                </p>
+                <a href="https://career.asu.edu/career-exploration" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="resource-link"
+                   style="display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; background: var(--asu-maroon); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease;">
+                    Take Assessment
+                    <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Networking Guide -->
+            <div class="resource-card fade-in" style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(140, 29, 64, 0.1); border: 1px solid rgba(140, 29, 64, 0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div class="resource-icon" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, var(--asu-gold), var(--asu-maroon)); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-handshake" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <h3 style="color: var(--asu-maroon); margin-bottom: 1rem; font-size: 1.25rem;">Networking Guide</h3>
+                <p style="color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6;">
+                    Learn effective networking strategies and build professional relationships with industry leaders.
+                </p>
+                <a href="https://career.asu.edu/networking" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="resource-link"
+                   style="display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; background: var(--asu-maroon); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease;">
+                    Learn Networking
+                    <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Job Search -->
+            <div class="resource-card fade-in" style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(140, 29, 64, 0.1); border: 1px solid rgba(140, 29, 64, 0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div class="resource-icon" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, var(--asu-maroon), var(--asu-gold)); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-briefcase" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <h3 style="color: var(--asu-maroon); margin-bottom: 1rem; font-size: 1.25rem;">Job Search</h3>
+                <p style="color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6;">
+                    Access ASU's job board, internship opportunities, and career fairs to find your next opportunity.
+                </p>
+                <a href="https://career.asu.edu/job-search" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="resource-link"
+                   style="display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; background: var(--asu-maroon); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease;">
+                    Search Jobs
+                    <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+
+            <!-- Career Counseling -->
+            <div class="resource-card fade-in" style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(140, 29, 64, 0.1); border: 1px solid rgba(140, 29, 64, 0.1); transition: all 0.3s ease; cursor: pointer;">
+                <div class="resource-icon" style="width: 4rem; height: 4rem; background: linear-gradient(135deg, var(--asu-gold), var(--asu-maroon)); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                    <i class="fas fa-user-graduate" style="color: white; font-size: 1.5rem;"></i>
+                </div>
+                <h3 style="color: var(--asu-maroon); margin-bottom: 1rem; font-size: 1.25rem;">Career Counseling</h3>
+                <p style="color: #6b7280; margin-bottom: 1.5rem; line-height: 1.6;">
+                    Schedule one-on-one appointments with career counselors for personalized guidance and support.
+                </p>
+                <a href="https://career.asu.edu/appointments" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="resource-link"
+                   style="display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; background: var(--asu-maroon); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease;">
+                    Book Appointment
+                    <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Resources Section -->
+        <div class="additional-resources fade-in" style="margin-top: 4rem; background: linear-gradient(135deg, var(--asu-maroon), var(--asu-gold)); border-radius: 1rem; padding: 3rem; color: white; text-align: center;">
+            <h2 style="margin-bottom: 1rem; font-size: 2rem;">Need More Help?</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Visit ASU Career Services for comprehensive career development support, workshops, and additional resources.
+            </p>
+            <a href="https://career.asu.edu/" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="display: inline-flex; align-items: center; padding: 1rem 2rem; background: white; color: var(--asu-maroon); text-decoration: none; border-radius: 0.5rem; font-weight: 600; transition: all 0.3s ease; font-size: 1.125rem;">
+                Visit ASU Career Services
+                <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Enhanced styling for resources page */
+.resource-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(140, 29, 64, 0.15), 0 10px 10px -5px rgba(140, 29, 64, 0.1);
+}
+
+.resource-link:hover {
+    background: var(--asu-gold);
+    color: var(--asu-maroon);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(255, 198, 39, 0.3);
+}
+
+.additional-resources {
+    background: linear-gradient(135deg, var(--asu-maroon) 0%, var(--asu-gold) 50%, var(--asu-maroon) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .additional-resources {
+        padding: 2rem 1rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+    
+    // Add click tracking for resource links
+    document.querySelectorAll('.resource-link').forEach(link => {
+        link.addEventListener('click', function() {
+            const resourceName = this.textContent.trim();
+            
+            // Track the click with the backend
+            fetch('/api/track-resource-click', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    resource_name: resourceName
+                })
+            }).then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Resource click tracked:', resourceName);
+                }
+            }).catch(error => {
+                console.error('Error tracking resource click:', error);
+            });
+        });
+    });
+});
+</script>
+{% endblock %} 

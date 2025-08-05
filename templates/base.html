@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Global Career Network - ASU{% endblock %}</title>
+    <meta name="description" content="{% block description %}Connecting international students with career opportunities at Arizona State University. Join our community for professional development, networking, and career guidance.{% endblock %}">
+    <meta name="keywords" content="career network, professional development, ASU, networking, career guidance, international students, Arizona State University, job opportunities, mentorship">
+    <meta name="author" content="Global Career Network Team">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='gcn.png') }}">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="{{ url_for('home') }}" aria-label="Global Career Network Home">
+                    <img src="{{ url_for('static', filename='gcn.png') }}" alt="Global Career Network Logo" class="logo-img">
+                    <span class="logo-text">Global Career Network</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="{{ url_for('resources') }}" class="nav-link">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('resources') }}">Career Services</a></li>
+                            <li><a href="{{ url_for('resources') }}">Resume Builder</a></li>
+                            <li><a href="{{ url_for('resources') }}">Interview Prep</a></li>
+                            <li><a href="{{ url_for('resources') }}">Career Assessment</a></li>
+                            <li><a href="{{ url_for('resources') }}">Networking Guide</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="{{ url_for('events') }}" class="nav-link">Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('upcoming_events') }}">Upcoming Events</a></li>
+                            <li><a href="{{ url_for('past_events') }}">Past Events</a></li>
+                            <li><a href="{{ url_for('workshops') }}">Workshops</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="{{ url_for('community') }}" class="nav-link">Community</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('success_stories') }}">Success Stories</a></li>
+                            <li><a href="{{ url_for('mentorship') }}">Mentorship</a></li>
+                            <li><a href="{{ url_for('forum') }}">Discussion Forum</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('team') }}" class="nav-link">Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('join') }}" class="nav-link">Join</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><i class="fas fa-shield-alt"></i> About GCN</h3>
+                <p>Global Career Network at ASU connects international students with career opportunities and professional development resources.</p>
+                <div class="footer-heart">
+                    <i class="fas fa-heart"></i>
+                    <span>Empowering global careers since 2020</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="{{ url_for('resources') }}">Resources</a></li>
+                        <li><a href="{{ url_for('events') }}">Events</a></li>
+                        <li><a href="{{ url_for('team') }}">Team</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{ url_for('community') }}">Community</a></li>
+                        <li><a href="{{ url_for('join') }}">Join Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul class="contact-list">
+                    <li>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <a href="mailto:gcn@asu.edu">gcn@asu.edu</a>
+                    </li>
+                    <li>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span>Arizona State University<br>Tempe, AZ 85281</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul class="social-list">
+                    <li>
+                        <a href="https://www.linkedin.com/company/global-career-network/" target="_blank" rel="noopener noreferrer">
+                            <div class="social-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/gcn.asu/" target="_blank" rel="noopener noreferrer">
+                            <div class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <i class="fas fa-star"></i>
+                <p>© 2024 Global Career Network - Arizona State University. All rights reserved.</p>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="footer-tagline">Empowering international students to build successful global careers</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

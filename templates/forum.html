@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Discussion Forum - Global Career Network{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding: 2rem 0;">
+    <div class="hero-content">
+        <h1 class="fade-in">Discussion <span class="gradient-text">Forum</span></h1>
+        <p class="fade-in">
+            Join discussions, ask questions, and share insights with the community
+        </p>
+    </div>
+</section>
+
+<section class="about" style="padding: 2rem 0;">
+    <div class="about-container">
+        <div class="text-center mb-12">
+            <h2 class="fade-in" style="color: var(--asu-maroon); font-size: 2rem;">Community Discussions</h2>
+            <p class="about-subtitle fade-in">
+                Connect with fellow students and professionals in our supportive community forum
+            </p>
+        </div>
+
+        <div class="forum-content" style="max-width: 800px; margin: 0 auto;">
+            <div class="forum-info fade-in" style="background: white; border-radius: 1rem; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 10px 15px -3px rgba(140, 29, 64, 0.1);">
+                <h3 style="color: var(--asu-maroon); margin-bottom: 1rem;">Forum Guidelines</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; padding: 1rem; background: #f9fafb; border-radius: 0.5rem;">
+                        <i class="fas fa-check-circle" style="color: var(--asu-gold);"></i>
+                        <span>Be respectful and supportive of all members</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; padding: 1rem; background: #f9fafb; border-radius: 0.5rem;">
+                        <i class="fas fa-check-circle" style="color: var(--asu-gold);"></i>
+                        <span>Share relevant career-related content and questions</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; padding: 1rem; background: #f9fafb; border-radius: 0.5rem;">
+                        <i class="fas fa-check-circle" style="color: var(--asu-gold);"></i>
+                        <span>Help others by sharing your experiences and insights</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="text-center">
+                <h3 class="fade-in" style="color: var(--asu-maroon); margin-bottom: 1rem;">Join the Discussion</h3>
+                <p class="fade-in" style="margin-bottom: 2rem;">Connect with our community and start meaningful conversations.</p>
+                <a href="mailto:gcn@asu.edu" class="btn btn-primary fade-in" style="background: var(--asu-maroon); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none;">
+                    Access Forum
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 
