@@ -235,8 +235,8 @@ class FeedbackForm {
                 this.showMessage(result.errors ? result.errors.join(', ') : 'Failed to submit feedback. Please try again.', 'error');
             }
         } catch (error) {
-            console.error('Error submitting feedback:', error);
-            this.showMessage('Network error. Please check your connection and try again.', 'error');
+            // Error submitting feedback
+            this.showMessage('An error occurred while submitting feedback. Please try again.', 'error');
         } finally {
             this.isSubmitting = false;
             this.submitBtn.disabled = false;

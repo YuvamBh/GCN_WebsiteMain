@@ -63,22 +63,16 @@ function trackResourceClick(resourceName) {
             user_agent: navigator.userAgent
         })
     })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error('Network response was not ok');
-    })
+    .then(response => response.json())
     .then(data => {
         if (data.success) {
-            console.log('Resource click tracked:', resourceName);
+            // Resource click tracked successfully
         } else {
-            console.warn('Failed to track resource click:', data.message);
+            // Failed to track resource click
         }
     })
     .catch(error => {
-        console.error('Error tracking resource click:', error);
-        // Don't block the user experience if tracking fails
+        // Error tracking resource click
     });
 }
 

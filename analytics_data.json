@@ -1,8 +1,11 @@
 {
   "page_views": {
-    "home": 10,
-    "resources": 1,
-    "team": 1
+    "home": 13,
+    "resources": 2,
+    "team": 2,
+    "join": 1,
+    "community": 1,
+    "events": 1
   },
   "resource_clicks": {},
   "form_submissions": {},

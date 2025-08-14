@@ -117,28 +117,36 @@ class Navigation {
             navLink.addEventListener('touchstart', handleDropdownToggle, { passive: false });
         });
 
-        // Handle dropdown submenu links
+        // Handle dropdown submenu links - allow navigation
         const dropdownLinks = this.navMenu.querySelectorAll('.dropdown-menu a');
+        
         dropdownLinks.forEach(link => {
             const handleSubmenuClick = (e) => {
-                e.stopPropagation();
-                this.closeMobileMenu();
+                // Allow navigation to happen
+                // Close mobile menu after a short delay to allow navigation
+                setTimeout(() => {
+                    this.closeMobileMenu();
+                }, 100);
             };
             
-            link.addEventListener('click', handleSubmenuClick, { passive: false });
-            link.addEventListener('touchstart', handleSubmenuClick, { passive: false });
+            link.addEventListener('click', handleSubmenuClick, { passive: true });
+            link.addEventListener('touchstart', handleSubmenuClick, { passive: true });
         });
 
-        // Handle regular nav links (non-dropdown)
+        // Handle regular nav links (non-dropdown) - allow navigation
         const regularNavLinks = this.navMenu.querySelectorAll('.nav-item:not(.dropdown) .nav-link');
+        
         regularNavLinks.forEach(link => {
             const handleRegularClick = (e) => {
-                e.stopPropagation();
-                this.closeMobileMenu();
+                // Allow navigation to happen
+                // Close mobile menu after a short delay to allow navigation
+                setTimeout(() => {
+                    this.closeMobileMenu();
+                }, 100);
             };
             
-            link.addEventListener('click', handleRegularClick, { passive: false });
-            link.addEventListener('touchstart', handleRegularClick, { passive: false });
+            link.addEventListener('click', handleRegularClick, { passive: true });
+            link.addEventListener('touchstart', handleRegularClick, { passive: true });
         });
     }
 
@@ -210,21 +218,19 @@ class Navigation {
 
     // Mobile dropdown methods
     showMobileDropdown(dropdownMenu) {
-        dropdownMenu.style.display = 'block';
         dropdownMenu.style.maxHeight = '0';
         
         requestAnimationFrame(() => {
             dropdownMenu.style.maxHeight = dropdownMenu.scrollHeight + 'px';
+            dropdownMenu.style.opacity = '1';
+            dropdownMenu.style.visibility = 'visible';
         });
     }
 
     hideMobileDropdown(dropdownMenu) {
         dropdownMenu.style.maxHeight = '0';
-        setTimeout(() => {
-            if (!dropdownMenu.parentElement.classList.contains('active')) {
-                dropdownMenu.style.display = 'none';
-            }
-        }, 400);
+        dropdownMenu.style.opacity = '0';
+        dropdownMenu.style.visibility = 'hidden';
     }
 
     closeAllDropdowns() {
@@ -233,6 +239,8 @@ class Navigation {
             const dropdown = item.querySelector('.dropdown-menu');
             if (dropdown) {
                 dropdown.style.maxHeight = '0';
+                dropdown.style.opacity = '0';
+                dropdown.style.visibility = 'hidden';
             }
         });
     }
