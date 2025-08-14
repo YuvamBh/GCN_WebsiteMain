@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Success Stories - Global Career Network{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/success_stories.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero success-stories-hero">
+    <div class="hero-content">
+        <h1 class="fade-in">Success <span class="gradient-text">Stories</span></h1>
+        <p class="fade-in">
+            Inspiring stories from our members who have achieved their career goals
+        </p>
+    </div>
+</section>
+
+<section class="about success-stories-about">
+    <div class="about-container">
+        <div class="stories-grid">
+            <!-- Story 1 -->
+            <div class="story-card fade-in">
+                <div class="story-header">
+                    <img src="{{ url_for('static', filename='images/sarah-chen.jpg') }}" alt="Sarah Chen" class="story-avatar">
+                    <div class="story-info">
+                        <h3>Sarah Chen</h3>
+                        <p class="position">Software Engineer at Google</p>
+                        <p class="details">Computer Science, Class of 2023</p>
+                    </div>
+                </div>
+                <blockquote class="story-quote">
+                    "GCN's mentorship program connected me with industry professionals who guided me through the interview process. The resume building events helped me showcase my skills effectively, and the networking events opened doors I never thought possible."
+                </blockquote>
+                <div class="story-tags">
+                    <span class="story-tag">Mentorship</span>
+                    <span class="story-tag">Resume Building</span>
+                    <span class="story-tag">Networking</span>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card fade-in">
+                <div class="story-header">
+                    <img src="{{ url_for('static', filename='images/miguel-rodriguez.jpg') }}" alt="Miguel Rodriguez" class="story-avatar">
+                    <div class="story-info">
+                        <h3>Miguel Rodriguez</h3>
+                        <p class="position">Data Scientist at Amazon</p>
+                        <p class="details">Data Science, Class of 2023</p>
+                    </div>
+                </div>
+                <blockquote class="story-quote">
+                    "The interview preparation events were invaluable. I learned how to structure my responses and showcase my technical skills. GCN's community support gave me the confidence to pursue my dream role."
+                </blockquote>
+                <div class="story-tags">
+                    <span class="story-tag">Interview Prep</span>
+                    <span class="story-tag">Technical Skills</span>
+                    <span class="story-tag">Community</span>
+                </div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="story-card fade-in">
+                <div class="story-header">
+                    <img src="{{ url_for('static', filename='images/priya-patel.jpg') }}" alt="Priya Patel" class="story-avatar">
+                    <div class="story-info">
+                        <h3>Priya Patel</h3>
+                        <p class="position">Product Manager at Microsoft</p>
+                        <p class="details">Business Administration, Class of 2022</p>
+                    </div>
+                </div>
+                <blockquote class="story-quote">
+                    "GCN helped me understand the unique challenges international students face. The personal branding event taught me how to tell my story effectively, and the networking events connected me with the right people."
+                </blockquote>
+                <div class="story-tags">
+                    <span class="story-tag">Personal Branding</span>
+                    <span class="story-tag">Storytelling</span>
+                    <span class="story-tag">Networking</span>
+                </div>
+            </div>
+
+            <!-- Story 4 -->
+            <div class="story-card fade-in">
+                <div class="story-header">
+                    <img src="{{ url_for('static', filename='images/david-kim.jpg') }}" alt="David Kim" class="story-avatar">
+                    <div class="story-info">
+                        <h3>David Kim</h3>
+                        <p class="position">Marketing Manager at Apple</p>
+                        <p class="details">Marketing, Class of 2022</p>
+                    </div>
+                </div>
+                <blockquote class="story-quote">
+                    "The LinkedIn optimization event transformed my online presence. I learned how to build meaningful connections and showcase my expertise. GCN's resources were crucial in my job search success."
+                </blockquote>
+                <div class="story-tags">
+                    <span class="story-tag">LinkedIn</span>
+                    <span class="story-tag">Online Presence</span>
+                    <span class="story-tag">Networking</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="share-story">
+            <h2 class="fade-in">Share Your Story</h2>
+            <p class="about-subtitle fade-in">
+                Have a success story to share? We'd love to hear about your journey and inspire others in our community.
+            </p>
+            <a href="mailto:gcn@asu.edu" class="btn btn-primary fade-in">
+                Share Your Story
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %} 

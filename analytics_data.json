@@ -1,0 +1,30 @@
+{
+  "page_views": {
+    "home": 128,
+    "resources": 40,
+    "events": 29,
+    "community": 23,
+    "team": 24,
+    "join": 25,
+    "upcoming_events": 6,
+    "past_events": 8,
+    "workshops": 2,
+    "success_stories": 5,
+    "mentorship": 3,
+    "forum": 4
+  },
+  "resource_clicks": {
+    "Practice Interviews": 2,
+    "Access Resume Builder": 3,
+    "Take Assessment": 1,
+    "Learn Networking": 1,
+    "Search Jobs": 1,
+    "Book Appointment": 3,
+    "Explore Job Tools": 1,
+    "Find Micro-Internships": 1,
+    "Start Virtual Internship": 1,
+    "Access Handshake": 1
+  },
+  "form_submissions": {},
+  "events": []
+}

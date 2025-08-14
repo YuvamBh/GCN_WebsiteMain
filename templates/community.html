@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Community - Global Career Network{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/community.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero community-hero">
+    <div class="hero-content">
+        <h1 class="fade-in">Community</h1>
+        <p class="fade-in">
+            Connect with fellow students and professionals in our supportive community
+        </p>
+    </div>
+</section>
+
+<section class="about community-about">
+    <div class="about-container">
+        <div class="community-grid">
+            <a href="{{ url_for('success_stories') }}" class="community-card fade-in">
+                <div class="card-content">
+                    <div class="card-icon">🌟</div>
+                    <h3>Success Stories</h3>
+                    <p>
+                        Read inspiring stories from our members who have achieved their career goals
+                    </p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('mentorship') }}" class="community-card fade-in">
+                <div class="card-content">
+                    <div class="card-icon">🤝</div>
+                    <h3>Mentorship</h3>
+                    <p>
+                        Connect with experienced professionals for guidance and career advice
+                    </p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('forum') }}" class="community-card fade-in">
+                <div class="card-content">
+                    <div class="card-icon">💬</div>
+                    <h3>Discussion Forum</h3>
+                    <p>
+                        Join discussions, ask questions, and share insights with the community
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <div class="join-community">
+            <h2 class="fade-in">Join Our Community</h2>
+            <p class="about-subtitle fade-in">
+                Be part of our growing network of career-driven individuals and access exclusive resources and opportunities.
+            </p>
+            <a href="{{ url_for('join') }}" class="btn btn-primary fade-in">
+                Become a Member
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %} 

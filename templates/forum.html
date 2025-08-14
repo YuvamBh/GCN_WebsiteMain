@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Discussion Forum - Global Career Network{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/forum.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero forum-hero">
+    <div class="hero-content">
+        <h1 class="fade-in">Discussion <span class="gradient-text">Forum</span></h1>
+        <p class="fade-in">
+            Join discussions, ask questions, and share insights with the community
+        </p>
+    </div>
+</section>
+
+<section class="about forum-about">
+    <div class="about-container">
+        <div class="text-center mb-12">
+            <h2 class="fade-in">Community Discussions</h2>
+            <p class="about-subtitle fade-in">
+                Connect with fellow students and professionals in our supportive community forum
+            </p>
+        </div>
+
+        <div class="forum-content">
+            <div class="forum-info fade-in">
+                <h3>Forum Guidelines</h3>
+                <ul class="forum-guidelines">
+                    <li class="guideline-item">
+                        <i class="fas fa-check-circle guideline-icon"></i>
+                        <span class="guideline-text">Be respectful and supportive of all members</span>
+                    </li>
+                    <li class="guideline-item">
+                        <i class="fas fa-check-circle guideline-icon"></i>
+                        <span class="guideline-text">Share relevant career-related content and questions</span>
+                    </li>
+                    <li class="guideline-item">
+                        <i class="fas fa-check-circle guideline-icon"></i>
+                        <span class="guideline-text">Help others by sharing your experiences and insights</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="access-forum">
+                <h3 class="fade-in">Join the Discussion</h3>
+                <p class="fade-in">Connect with our community and start meaningful conversations.</p>
+                <a href="mailto:gcn@asu.edu" class="btn btn-primary fade-in">
+                    Access Forum
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

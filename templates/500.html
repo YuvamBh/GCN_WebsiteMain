@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error - Global Career Network{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding: 4rem 0;">
+    <div class="hero-content">
+        <h1 class="fade-in" style="font-size: 6rem; color: var(--asu-maroon); margin-bottom: 1rem;">500</h1>
+        <h2 class="fade-in" style="color: var(--asu-maroon); margin-bottom: 1rem;">Server Error</h2>
+        <p class="fade-in" style="margin-bottom: 2rem;">
+            Something went wrong on our end. Please try again later!
+        </p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('home') }}" class="btn btn-primary fade-in">Go Home</a>
+            <a href="mailto:gcn@asu.edu" class="btn btn-secondary fade-in">Contact Support</a>
+        </div>
+    </div>
+</section>
+{% endblock %} 

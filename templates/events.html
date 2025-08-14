@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Events - Global Career Network{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="hero events-hero">
+    <div class="hero-content">
+        <h1 class="fade-in">Events</h1>
+        <p class="fade-in">
+            Join our events to enhance your career development
+        </p>
+    </div>
+</section>
+
+<section class="about events-about">
+    <div class="about-container">
+        <div class="events-grid">
+            <a href="{{ url_for('upcoming_events') }}" class="event-category fade-in">
+                <div class="event-card">
+                    <div class="event-icon">📅</div>
+                    <h3>Upcoming Events</h3>
+                    <p>
+                        View and register for our upcoming events
+                    </p>
+                </div>
+            </a>
+
+            <a href="{{ url_for('past_events') }}" class="event-category fade-in">
+                <div class="event-card">
+                    <div class="event-icon">📚</div>
+                    <h3>Past Events</h3>
+                    <p>
+                        Review our previous events and access workshop materials
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <div class="newsletter-section">
+            <h2 class="fade-in">Stay Updated</h2>
+            <p class="about-subtitle fade-in">
+                Don't miss out on our latest events and opportunities. Join our mailing list to receive updates.
+            </p>
+            <form class="newsletter-form fade-in">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-primary">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %} 
