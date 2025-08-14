@@ -1,0 +1,29 @@
+{
+  "page_views": {
+    "home": 8,
+    "resources": 1,
+    "team": 1
+  },
+  "resource_clicks": {},
+  "form_submissions": {},
+  "events": [
+    {
+      "timestamp": "2025-08-14T13:06:44.239861",
+      "form_type": "feedback",
+      "data": {
+        "Type": "General",
+        "Content": "This is a good website",
+        "Name": "ABC"
+      }
+    },
+    {
+      "timestamp": "2025-08-14T13:09:00.695343",
+      "form_type": "feedback",
+      "data": {
+        "Type": "General",
+        "Content": "Website looks gawd!",
+        "Name": "SIDDHANT"
+      }
+    }
+  ]
+}

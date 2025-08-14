@@ -9,6 +9,14 @@ from datetime import datetime
 from typing import Dict, List, Optional
 import logging
 
+# Airtable integration
+try:
+    from pyairtable import Api, Base, Table
+    AIRTABLE_AVAILABLE = True
+except ImportError:
+    AIRTABLE_AVAILABLE = False
+    logging.warning("pyairtable not available. Feedback form will not work.")
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -92,8 +100,26 @@ class GCNFormProcessor:
     def __init__(self):
         self.required_fields = {
             "join": ["firstName", "lastName", "email", "major", "graduationYear"],
-            "contact": ["name", "email", "message"]
+            "contact": ["name", "email", "message"],
+            "feedback": ["name", "feedbackType", "message"]  # Name required, email optional
         }
+        
+        # Airtable configuration
+        self.airtable_api_key = os.getenv('AIRTABLE_API_KEY') or os.getenv('AIRTABLE_PERSONAL_ACCESS_TOKEN')
+        self.airtable_base_id = os.getenv('AIRTABLE_BASE_ID')
+        self.airtable_table_name = os.getenv('AIRTABLE_TABLE_NAME', 'Feedback')
+        
+        if AIRTABLE_AVAILABLE and self.airtable_api_key and self.airtable_base_id:
+            try:
+                self.airtable_table = Table(self.airtable_api_key, self.airtable_base_id, self.airtable_table_name)
+                self.airtable_available = True
+                logger.info("Airtable connection established successfully")
+            except Exception as e:
+                logger.error(f"Failed to connect to Airtable: {e}")
+                self.airtable_available = False
+        else:
+            self.airtable_available = False
+            logger.warning("Airtable not configured. Set AIRTABLE_API_KEY and AIRTABLE_BASE_ID environment variables.")
     
     def validate_form_data(self, form_type: str, data: Dict) -> Dict:
         """Validate form data and return validation result"""
@@ -147,6 +173,55 @@ class GCNFormProcessor:
             "data": processed_data,
             "message": "Form submitted successfully!"
         }
+    
+    def process_feedback_form(self, data: Dict) -> Dict:
+        """Process feedback form data and store in Airtable"""
+        validation = self.validate_form_data("feedback", data)
+        
+        if not validation["valid"]:
+            return validation
+        
+        # Process the form data to match Airtable column names
+        processed_data = {
+            "Type": data["feedbackType"],
+            "Content": data["message"].strip()
+        }
+        
+        # Add name (required)
+        processed_data["Name"] = data["name"].strip()
+        
+
+        
+        # Add email if provided (optional)
+        if data.get("email") and data["email"].strip():
+            processed_data["Email"] = data["email"].strip().lower()
+        
+        # Store in Airtable if available
+        if self.airtable_available:
+            try:
+                record = self.airtable_table.create(processed_data)
+                logger.info(f"Feedback stored in Airtable: {record['id']}")
+                return {
+                    "valid": True,
+                    "data": processed_data,
+                    "message": "Thank you for your feedback! It has been submitted successfully.",
+                    "airtable_id": record['id']
+                }
+            except Exception as e:
+                logger.error(f"Error storing feedback in Airtable: {e}")
+                return {
+                    "valid": False,
+                    "errors": ["Failed to store feedback. Please try again later."]
+                }
+        else:
+            # Fallback: store locally if Airtable is not available
+            logger.warning("Airtable not available. Storing feedback locally.")
+            return {
+                "valid": True,
+                "data": processed_data,
+                "message": "Thank you for your feedback! It has been submitted successfully.",
+                "stored_locally": True
+            }
 
 class GCNContentManager:
     """Manage dynamic content for the website"""

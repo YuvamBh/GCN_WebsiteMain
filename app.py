@@ -1,9 +1,20 @@
 from flask import Flask, render_template, redirect, url_for, request, flash, jsonify
 import os
+import logging
 from enhanced_features import analytics, form_processor, content_manager, utilities
 
+# Load environment variables
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # python-dotenv not installed, continue without it
+
+# Configure logging
+logger = logging.getLogger(__name__)
+
 app = Flask(__name__)
-app.secret_key = 'gcn_secret_key_2024'
+app.secret_key = 'gcn_secret_key_2025'
 
 # Routes
 @app.route('/')
@@ -96,6 +107,37 @@ def track_resource_click():
 def get_website_stats():
     """API endpoint to get website statistics"""
     return jsonify(analytics.get_analytics_summary())
+
+@app.route('/api/feedback', methods=['POST'])
+def submit_feedback():
+    """API endpoint to submit feedback form"""
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"success": False, "error": "No data provided"}), 400
+        
+        # Process the feedback form
+        result = form_processor.process_feedback_form(data)
+        
+        if result["valid"]:
+            # Track the form submission
+            analytics.track_form_submission("feedback", result["data"])
+            return jsonify({
+                "success": True,
+                "message": result["message"]
+            })
+        else:
+            return jsonify({
+                "success": False,
+                "errors": result["errors"]
+            }), 400
+            
+    except Exception as e:
+        logger.error(f"Error processing feedback: {e}")
+        return jsonify({
+            "success": False,
+            "error": "Internal server error"
+        }), 500
 
 @app.route('/about')
 def about():
