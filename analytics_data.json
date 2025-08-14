@@ -1,16 +1,16 @@
 {
   "page_views": {
-    "home": 128,
-    "resources": 40,
-    "events": 29,
-    "community": 23,
-    "team": 24,
-    "join": 25,
+    "home": 144,
+    "resources": 46,
+    "events": 33,
+    "community": 27,
+    "team": 27,
+    "join": 28,
     "upcoming_events": 6,
     "past_events": 8,
     "workshops": 2,
     "success_stories": 5,
-    "mentorship": 3,
+    "mentorship": 4,
     "forum": 4
   },
   "resource_clicks": {
