@@ -1,9 +1,34 @@
-Flask==2.3.3
-Werkzeug==2.3.7
-Jinja2==3.1.2
-MarkupSafe==2.1.3
-itsdangerous==2.1.2
-click==8.1.7
-blinker==1.6.3
-pyairtable==2.2.0
-python-dotenv==1.0.0 
+# =============================================================================
+# PYTHON DEPENDENCIES DISABLED FOR STATIC DEPLOYMENT
+# =============================================================================
+# These Python dependencies are no longer needed since the website has been
+# converted to a static frontend-only site for deployment to Netlify/Vercel.
+#
+# REASON FOR DISABLING:
+# - No Python backend is required for static hosting
+# - All server-side functionality has been removed
+# - Form handling is now done via static form providers
+# - No server-side processing is needed
+#
+# TO RE-ENABLE BACKEND:
+# 1. Uncomment the dependencies below
+# 2. Install with: pip install -r requirements.txt
+# 3. Run the Flask application: python app.py
+#
+# ORIGINAL DEPENDENCIES (COMMENTED OUT):
+# Flask==2.3.3
+# Werkzeug==2.3.7
+# Jinja2==3.1.2
+# MarkupSafe==2.1.3
+# itsdangerous==2.1.2
+# click==8.1.7
+# blinker==1.6.3
+# pyairtable==2.2.0
+# python-dotenv==1.0.0
+#
+# STATIC DEPLOYMENT REQUIREMENTS:
+# - No Python dependencies needed
+# - Static file server (npx serve, Python's http.server, etc.)
+# - Netlify Forms or Formspree for form handling
+# - No build process required
+# ============================================================================= 

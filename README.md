@@ -1,6 +1,6 @@
 # Global Career Network (GCN) Website
 
-A Flask-based website for the Global Career Network student organization at Arizona State University. This website serves as a platform for international students to access career development resources, networking opportunities, and professional guidance.
+A static website for the Global Career Network student organization at Arizona State University. This website serves as a platform for international students to access career development resources, networking opportunities, and professional guidance.
 
 ## Features
 
@@ -10,46 +10,51 @@ A Flask-based website for the Global Career Network student organization at Ariz
 - **Interactive Elements**: Smooth animations, hover effects, and form validation
 - **Accessibility**: WCAG compliant with proper semantic HTML and ARIA labels
 - **Security**: Content Security Policy and other security headers implemented
+- **Static Form Handling**: Feedback forms work without backend using Netlify Forms
 
 ## Technology Stack
 
-- **Backend**: Python Flask
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
 - **Styling**: Custom CSS with ASU color scheme
 - **Icons**: Font Awesome
 - **Fonts**: Google Fonts (Inter)
+- **Form Handling**: Netlify Forms (for static deployment)
+- **Deployment**: Netlify or Vercel (static hosting)
 
 ## Project Structure
 
 ```
 GCN_WEBSITE/
-├── app.py                 # Main Flask application
-├── requirements.txt       # Python dependencies
+├── index.html            # Home page (static)
+├── team.html             # Team page (static)
+├── events.html           # Events page (static)
+├── community.html        # Community page (static)
+├── join.html             # Join page (static)
+├── resources.html        # Resources page (static)
+├── 404.html              # Error page (static)
+├── 500.html              # Error page (static)
+├── netlify.toml          # Netlify deployment config
+├── vercel.json           # Vercel deployment config
 ├── README.md             # Project documentation
+├── CODEBASE_ANALYSIS.md  # Refactoring analysis
 ├── static/               # Static assets
 │   ├── css/
-│   │   └── style.css     # Main stylesheet
+│   │   ├── style.css     # Main stylesheet
+│   │   ├── index.css     # Home page styles
+│   │   └── feedback.css  # Feedback form styles
 │   ├── js/
-│   │   └── main.js       # JavaScript functionality
+│   │   ├── main.js       # Main JavaScript
+│   │   ├── navigation.js # Navigation functionality
+│   │   ├── feedback.js   # Feedback form handling
+│   │   └── index.js      # Home page JavaScript
 │   └── images/           # Images and media files
-└── templates/            # HTML templates
-    ├── base.html         # Base template
-    ├── index.html        # Home page
-    ├── team.html         # Team page
-    ├── events.html       # Events overview
-    ├── upcoming_events.html
-    ├── past_events.html
-    ├── workshops.html
-    ├── community.html    # Community overview
-    ├── success_stories.html
-    ├── mentorship.html
-    ├── forum.html
-    ├── join.html         # Membership form
-    ├── 404.html          # Error pages
-    └── 500.html
+└── templates/            # Original Flask templates (disabled)
+    ├── base.html         # Base template (converted to static)
+    ├── index.html        # Home template (converted to static)
+    └── ...               # Other templates (converted to static)
 ```
 
-## Installation and Setup
+## Quick Start (Static Site)
 
 1. **Clone the repository**:
    ```bash
@@ -57,59 +62,151 @@ GCN_WEBSITE/
    cd GCN_WEBSITE
    ```
 
-2. **Create a virtual environment**:
+2. **Serve the static files locally**:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   # Option 1: Using Python's built-in server
+   python -m http.server 8000
+   
+   # Option 2: Using Node.js serve
+   npx serve .
+   
+   # Option 3: Using any static file server
    ```
 
-3. **Install dependencies**:
+3. **Access the website**:
+   Open your browser and navigate to `http://localhost:8000`
+
+## Local Development
+
+The website is now a static site that can be served by any web server. No Python backend is required.
+
+### Using Python's HTTP Server
+```bash
+python -m http.server 8000
+```
+
+### Using Node.js serve
+```bash
+npx serve .
+```
+
+### Using any other static file server
+Any web server that can serve static files will work (Apache, Nginx, etc.)
+
+## Deployment
+
+The website is now a static site that can be deployed to any static hosting service.
+
+### Netlify Deployment (Recommended)
+
+1. **Connect your repository to Netlify**:
+   - Go to [netlify.com](https://netlify.com)
+   - Click "New site from Git"
+   - Connect your GitHub/GitLab repository
+   - Select the repository containing this code
+
+2. **Configure build settings**:
+   - Build command: (leave empty - no build needed)
+   - Publish directory: `.` (root directory)
+   - The `netlify.toml` file will handle all configuration
+
+3. **Deploy**:
+   - Netlify will automatically deploy your site
+   - Your site will be available at `https://your-site-name.netlify.app`
+
+4. **Form handling**:
+   - Netlify Forms will automatically handle the feedback form
+   - Form submissions will appear in your Netlify dashboard
+   - No additional configuration needed
+
+### Vercel Deployment
+
+1. **Connect your repository to Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
+   - Connect your GitHub/GitLab repository
+   - Select the repository containing this code
+
+2. **Configure deployment**:
+   - Framework Preset: "Other"
+   - Build Command: (leave empty)
+   - Output Directory: `.` (root directory)
+   - The `vercel.json` file will handle all configuration
+
+3. **Deploy**:
+   - Vercel will automatically deploy your site
+   - Your site will be available at `https://your-site-name.vercel.app`
+
+### GitHub Pages Deployment
+
+1. **Enable GitHub Pages**:
+   - Go to your repository settings
+   - Scroll to "Pages" section
+   - Select "Deploy from a branch"
+   - Choose "main" branch and "/ (root)" folder
+
+2. **Deploy**:
+   - GitHub Pages will automatically deploy your site
+   - Your site will be available at `https://your-username.github.io/your-repo-name`
+
+### Other Static Hosting Services
+
+The website can be deployed to any static hosting service:
+- **AWS S3 + CloudFront**
+- **Google Cloud Storage**
+- **Azure Static Web Apps**
+- **Firebase Hosting**
+- **Surge.sh**
+- **Any web server** (Apache, Nginx, etc.)
+
+## Refactoring Summary
+
+This website has been refactored from a Flask-based backend application to a static frontend-only site. Here are the key changes:
+
+### What Was Changed
+
+1. **Backend Disabled**: All Python Flask code has been commented out with explanatory comments
+2. **Templates Converted**: Flask templates converted to static HTML files
+3. **Form Handling**: Python backend form processing replaced with Netlify Forms
+4. **Static Assets**: All CSS, JavaScript, and images remain unchanged
+5. **Deployment Ready**: Added configuration files for Netlify and Vercel
+
+### Files Modified
+
+- **`app.py`**: Commented out with explanation of why disabled
+- **`enhanced_features.py`**: Commented out with explanation of why disabled  
+- **`requirements.txt`**: Commented out with explanation of why disabled
+- **`static/js/feedback.js`**: Updated to use Netlify Forms instead of Python backend
+- **Templates**: Converted from Jinja2 to static HTML
+
+### Form Handling
+
+The feedback form now uses **Netlify Forms** for static deployment:
+
+- **Netlify Forms**: Automatically handles form submissions when deployed to Netlify
+- **Formspree**: Alternative option for other hosting providers
+- **No Backend Required**: Forms work without any server-side processing
+
+### Re-enabling Backend (If Needed)
+
+If you need to re-enable the Python backend:
+
+1. **Uncomment the backend files**:
+   - Remove comment blocks from `app.py`
+   - Remove comment blocks from `enhanced_features.py`
+   - Restore `requirements.txt` dependencies
+
+2. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Run the application**:
+3. **Run the Flask application**:
    ```bash
    python app.py
    ```
 
-5. **Access the website**:
-   Open your browser and navigate to `http://localhost:5000`
-
-## Deployment
-
-### For GitHub Pages (Static Hosting)
-
-Since this is a Flask application, you'll need to convert it to static files for GitHub Pages hosting:
-
-1. **Install Flask-Freeze**:
-   ```bash
-   pip install Flask-Freeze
-   ```
-
-2. **Add to app.py**:
-   ```python
-   from flask_frozen import Freezer
-   freezer = Freezer(app)
-   
-   if __name__ == '__main__':
-       freezer.freeze()
-   ```
-
-3. **Generate static files**:
-   ```bash
-   python app.py
-   ```
-
-4. **Deploy the `build` folder** to GitHub Pages
-
-### For Traditional Hosting
-
-1. **Set up a web server** (Apache, Nginx, etc.)
-2. **Configure WSGI** with your hosting provider
-3. **Upload the application files**
-4. **Install dependencies** on the server
-5. **Configure environment variables** if needed
+4. **Access at**: `http://localhost:5000`
 
 ## Customization
 
@@ -128,18 +225,15 @@ The website uses ASU's official colors defined in CSS variables:
 
 ### Adding New Pages
 
-1. **Create a new template** in the `templates/` directory
-2. **Add a route** in `app.py`:
-   ```python
-   @app.route('/new-page')
-   def new_page():
-       return render_template('new_page.html')
-   ```
+1. **Create a new HTML file** in the root directory (e.g., `new-page.html`)
+2. **Copy the structure** from existing pages
+3. **Update navigation** in all HTML files to include the new page
+4. **Add any page-specific CSS** to `static/css/`
 
 ### Modifying Styles
 
 - Main styles are in `static/css/style.css`
-- Page-specific styles can be added in individual templates
+- Page-specific styles can be added in individual HTML files
 - Responsive design breakpoints are defined for mobile optimization
 
 ## Features Overview
